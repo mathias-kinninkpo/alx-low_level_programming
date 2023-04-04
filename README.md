@@ -1,4 +1,4 @@
-C - Hello, World
+##C - Hello, World
 General
 Why C programming is awesome (don’t forget to tweet today, with the hashtag #cisfun :))
 Who invented C
