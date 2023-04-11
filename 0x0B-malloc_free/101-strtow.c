@@ -41,7 +41,7 @@ char **strtow(char *str)
 			}
 			for (m = 0; m < len; m++, i++)
 				array[k][m] = str[i];
-			array[k++][m] = '\0';
+			array[k++][m] = '\n';
 		}
 	}
 	array[k] = NULL;
