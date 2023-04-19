@@ -1,49 +1,43 @@
-#include <stdio.h>
+#include "function_pointers.h"
 #include <stdlib.h>
-
+#include <stdio.h>
 
 /**
-* main - prints its own opcodes
-* @argc: number of arguments
-* @argv: array of arguments
-*
-* Return: Always 0 (Success)
-*/
-int main(int argc, char *argv[])
+ * main - Create Opcode
+ *
+ * @argc: the number of args
+ *
+ * @argv: argument vector
+ *
+ * Return: Always 0.
+ */
+int main(int argc, char **argv)
 {
-    int bytes, i;
-    char *arr;
 
+	int i;
 
-    if (argc != 2)
-    {
-        printf("Error\n");
-        exit(1);
-    }
+	/*  Correct # of args  */
+	if (argc != 2)
+	{
+		printf("Error\n");
+		exit(1);
+	}
 
+	/*  Are bytes less than 0  */
+	if (atoi(argv[1]) < 0)
+	{
+		printf("Error\n");
+		exit(2);
+	}
 
-    bytes = atoi(argv[1]);
+	while (i < atoi(argv[1]))
+	{
+		printf("%02x", *((unsigned char *)main + i));
+		i++;
+		if (i < atoi(argv[1]))
+			putchar(' ');
+	}
+	putchar('\n');
 
-
-    if (bytes < 0)
-    {
-        printf("Error\n");
-        exit(2);
-    }
-
-
-    arr = (char *)main;
-
-
-    for (i = 0; i < bytes; i++)
-    {
-        if (i == bytes - 1)
-        {
-            printf("%02hhx\n", arr[i]);
-            break;
-        }
-        printf("%02hhx ", arr[i]);
-    }
-    return (0);
+	return (0);
 }
-
