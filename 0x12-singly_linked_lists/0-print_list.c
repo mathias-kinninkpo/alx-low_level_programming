@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "lists.h"
+#include "list.h"
 /**
 * print_list - Prints linked list
 *
@@ -11,12 +11,11 @@
 size_t print_list(const list_t *h)
 {
 	unsigned int index = 0;
-	const list_t *list = NULL;
+	const list_t* list = NULL;
 	list = h;
-
-	while (list != NULL)
+	while(list != NULL)
 	{
-		if (list->str == NULL)
+		if(list->str == NULL)
 		{
 			printf("[0] (nil)\n");
 		}
@@ -29,4 +28,3 @@ size_t print_list(const list_t *h)
 	}
 	return (index);
 }
-
